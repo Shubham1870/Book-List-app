@@ -35,7 +35,7 @@ const Signup = () => {
                 setErr(data.message)
                 navigate("/")
             } else {
-                setErr(data?.message || "An error occurred")
+                setErr(data?.message )
             }
 
         }).catch(err=>{
