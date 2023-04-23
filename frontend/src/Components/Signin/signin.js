@@ -30,6 +30,7 @@ const Signin=()=>{
                 seterr(data.message)
                 return
             }
+            alert(data.message)
             localStorage.setItem("token",data.token)
             localStorage.setItem("id",data.id)
             console.log(data,"data")
