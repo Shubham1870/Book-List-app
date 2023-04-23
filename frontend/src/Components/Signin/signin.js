@@ -1,6 +1,6 @@
 import React from "react"
 import "../Signin/signin.css"
-import {Link} from "react-router-dom"
+
 import { useState } from "react"
 const Signin=()=>{
     const [data,setdata]=useState({
@@ -16,7 +16,7 @@ const Signin=()=>{
     const handlesubmit=async (e)=>{
         e.preventDefault()
 
-        await fetch("http://localhost:3001/signin",{
+        await fetch("http://localhost:8000/signin",{
             method:"POST",
             headers:{
                 Accept:"application/json",
@@ -44,13 +44,14 @@ const Signin=()=>{
     <div id="inside-container">
 <h1>Member Login</h1>
 <form onSubmit={handlesubmit}>
-    <label>Email</label>
-    <input type="email" name="email" required onChange={(e)=>{handlechange(e)}} />
+    <label>Email:</label>
+    <input type="email" name="email" id="first-input" required onChange={(e)=>{handlechange(e)}} />
     <br/>
-    <label>Password</label>
-    <input type="password" name="password" onChange={(e)=>{handlechange(e)}}></input>
+    <label>Password:</label>
+    <input type="password" name="password" onChange={(e)=>{handlechange(e)}}/>
+    <br/>
     <button type="submit">Submit</button>
-    <Link >Signup</Link>
+   
     <div>{err}</div>
 
 

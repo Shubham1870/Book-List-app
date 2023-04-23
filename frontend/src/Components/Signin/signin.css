@@ -9,8 +9,20 @@
     width: 30vw;
     height: 50vh;
     margin: 0 auto;
+   
     text-align: center;
 }
 #inside-container h1{
     padding-top: 2rem;
+}
+#inside-container form{
+    text-align: left;
+    margin-left:5rem;
+    margin-bottom: 2rem;
+}
+#first-input{
+    margin-left: 1.9rem;
+}
+button{
+    margin-left: 6rem;
 }
