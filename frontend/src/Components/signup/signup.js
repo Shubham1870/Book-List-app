@@ -21,7 +21,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        await fetch("http://localhost:8000/signup",{
+        await fetch("https://book-backend2.onrender.com/signup",{
             method:"POST",
             headers:{
                 Accept:"application/json",
