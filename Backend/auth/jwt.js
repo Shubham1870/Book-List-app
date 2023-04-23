@@ -11,7 +11,7 @@ const auth=((req,res,next)=>{
             })
         }
         req.user=decoded.data
-        console.log(req.user,requser)
+        console.log(req.user,req.user)
         next()
     })
 })

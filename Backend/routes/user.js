@@ -23,7 +23,8 @@ if(password!==confirmpassword){
         message:"password do not match with confirmpassword"
     })
 }
-bcrypt.hash(password,salt,async function(err,hash){
+const salt = await bcrypt.genSalt(10);
+bcrypt.hash(password, salt, async function (err, hash) {
     if(err){
         return res.status(400).json({
     status:"error",

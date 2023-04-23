@@ -11,7 +11,7 @@ router.get("/books",async (req,res)=>{
         data
     })
 })
-router.post("/books",async (res,res)=>{
+router.post("/books",async (req,res)=>{
     const {title,ISBN,author,publisher}=req.body
 
     const data=await book.create({

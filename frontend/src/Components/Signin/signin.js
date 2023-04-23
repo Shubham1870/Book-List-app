@@ -16,7 +16,7 @@ const Signin=()=>{
     const handlesubmit=async (e)=>{
         e.preventDefault()
 
-        await fetch("http://localhosy:3001/signin",{
+        await fetch("http://localhost:3001/signin",{
             method:"POST",
             headers:{
                 Accept:"application/json",
