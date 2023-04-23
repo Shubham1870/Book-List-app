@@ -5,7 +5,7 @@ const Homepage = () => {
     const [newlist, setnewlist] = useState([]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:8000/book/${id}`, {
+        fetch(`https://book-backend2.onrender.com/book/${id}`, {
             method: "DELETE",
             headers: {
                 "Context-Type": "application/json",
@@ -23,7 +23,7 @@ const Homepage = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:8000/book`, {
+        fetch(`https://book-backend2.onrender.com/book`, {
             method: "GET",
             headers: {
                 "Context-Type": "application/json",
