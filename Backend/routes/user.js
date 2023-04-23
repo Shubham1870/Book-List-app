@@ -11,7 +11,7 @@ router.post("/signup",async (req,res)=>{
 const data=await user.find({email})
 console.log(data)
 
-if(data){
+if(data.length){
     return res.status(400).json({
         status:"error",
         message:"user already registered"
@@ -45,7 +45,7 @@ bcrypt.hash(password, salt, async function (err, hash) {
 router.post("/signin",async (req,res)=>{
     const {email,password}=req.body
     const data=await user.find({email})
-    if(!data){
+    if(!data.length){
         return res.status(400).json({
             status:"failed",
             message:"user not registered"
