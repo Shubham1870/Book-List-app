@@ -16,7 +16,7 @@ const Signin=()=>{
     const handlesubmit=async (e)=>{
         e.preventDefault()
 
-        await fetch("https://book-backend2.onrender.com./signin",{
+        await fetch("https://book-backend2.onrender.com/signin",{
             method:"POST",
             headers:{
                 Accept:"application/json",
