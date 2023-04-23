@@ -1,6 +1,6 @@
 import React from "react"
 import "../Signin/signin.css"
-
+import {Link}  from "react-router-dom"
 import { useState } from "react"
 const Signin=()=>{
     const [data,setdata]=useState({
@@ -50,8 +50,8 @@ const Signin=()=>{
     <label>Password:</label>
     <input type="password" name="password" onChange={(e)=>{handlechange(e)}}/>
     <br/>
-    <button type="submit">Submit</button>
-   
+    <button type="submit">Submit</button><br/>
+    <button><Link to="/signup">SignUp</Link></button>
     <div>{err}</div>
 
 

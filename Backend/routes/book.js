@@ -56,3 +56,4 @@ router.delete("/books/:id",async (req,res)=>{
         data
     })
 })
+module.exports=router
