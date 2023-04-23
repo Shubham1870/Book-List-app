@@ -1,13 +1,13 @@
 import React from "react"
 import "../Signin/signin.css"
-import {Link}  from "react-router-dom"
+import {Link, useNavigate}  from "react-router-dom"
 import { useState } from "react"
 const Signin=()=>{
     const [data,setdata]=useState({
         email:"",
         password:""
     })
-    
+    const navigate=useNavigate()
     const [err,seterr]=useState("")
     const handlechange=(e)=>{
      const {name,value}=e.target
@@ -22,7 +22,7 @@ const Signin=()=>{
                 Accept:"application/json",
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify(setdata)
+            body:JSON.stringify(data)
         }).then(res=>{
             return res.json()
         }).then(data=>{
@@ -30,7 +30,10 @@ const Signin=()=>{
                 seterr(data.message)
                 return
             }
-            alert(data.message)
+            seterr(data.message)
+            if(data.message==="Login Succesfull"){
+                navigate("/homepage")
+            }
             localStorage.setItem("token",data.token)
             localStorage.setItem("id",data.id)
             console.log(data,"data")
