@@ -1,0 +1,16 @@
+#main-container{
+    background-color: orangered;
+    width: 100vw;
+    height: 76vh;
+    padding-top: 10rem;
+}
+#inside-container{
+    background-color: lightgrey;
+    width: 30vw;
+    height: 50vh;
+    margin: 0 auto;
+    text-align: center;
+}
+#inside-container h1{
+    padding-top: 2rem;
+}
