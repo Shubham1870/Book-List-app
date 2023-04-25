@@ -8,9 +8,12 @@ const Userroute=require("./routes/user")
 const Bookroute=require("./routes/book")
 const auth=require("./auth/jwt")
 dotenv.config()
+const corsOptions = {
+  origin: 'https://book-backend2.onrender.com'
+}
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.use("/",Userroute)
 app.use("/",Bookroute)
