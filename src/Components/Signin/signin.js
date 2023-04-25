@@ -19,7 +19,7 @@ const Signin = () => {
   const handlesubmit = async (e) => {
     e.preventDefault()
 
-    await fetch("https://book-backend2.onrender.com/signin", {
+    const data1=await fetch(`https://book-backend2.onrender.com/signin`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -27,16 +27,16 @@ const Signin = () => {
       },
       body: JSON.stringify(data),
     })
-      .then((res) => {
-        return res.json()
+      .then((data1) => {
+        return res.data1()
       })
-      .then((data) => {
-        if (data.message === "Wrong password") {
-          seterr(data.message)
+      .then((response) => {
+        if (response.message === "Wrong password") {
+          seterr(response.message)
           return
         }
-        seterr(data.message)
-        if (data.message === "Login Succesfull") {
+        seterr(response.message)
+        if (response.message === "Login Succesfull") {
           navigate("/homepage")
         }
 
