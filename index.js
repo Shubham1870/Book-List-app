@@ -1,7 +1,7 @@
 const express=require("express")
 const app=express()
 const cors=require("cors")
-const PORT=8000|| "https://book-backend2.onrender.com"
+const PORT=process.env.PORT || 8000
 const dotenv=require("dotenv")
 const connection=require("./db/connection")()
 const Userroute=require("./routes/user")
@@ -11,9 +11,6 @@ dotenv.config()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors())
-
-
-
 
 app.use("/",Userroute)
 app.use("/",Bookroute)
