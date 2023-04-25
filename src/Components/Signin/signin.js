@@ -31,10 +31,14 @@ const Signin=()=>{
                 return
             }
             seterr(data.message)
+             if(data.message==="Login Succesfull"){	
+                navigate("/homepage")	
+            }
            
             localStorage.setItem("token",data.token)
             localStorage.setItem("id",data.id)
-            navigate("/homepage")
+             console.log(data,"data")
+            }
 
         }).catch(err=>{
             console.log(err)
